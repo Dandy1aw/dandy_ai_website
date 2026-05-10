@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import NotesList from '../../components/sections/NotesList.astro';
+import { getNotes } from '../../lib/content';
+
+const notes = await getNotes();
+---
+
+<Base
+  title="AI Notes — YourName"
+  description="关于 AI、推荐系统和产品工程的实践记录。"
+>
+  <div class="max-w-3xl mx-auto px-6 pt-16 pb-4">
+    <h1 class="fade-up text-4xl sm:text-5xl font-bold text-[var(--color-text)] tracking-tight">AI Notes</h1>
+    <p class="fade-up mt-3 text-[var(--color-muted)] leading-relaxed" style="transition-delay:80ms">
+      关于 AI、推荐系统和产品工程的实践记录。
+    </p>
+  </div>
+  <NotesList notes={notes} />
+</Base>
