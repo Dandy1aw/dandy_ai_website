@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import { User } from '@lucide/astro';
+
+const focuses = [
+  'AI Tools & Workflow',
+  'Recommendation Systems',
+  'Product Engineering',
+  'Personal Knowledge & Writing',
+];
+
+const contacts = [
+  { label: 'Email', href: 'mailto:your@email.com' },
+  { label: 'GitHub', href: 'https://github.com/yourusername' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
+  { label: 'X', href: 'https://x.com/yourusername' },
+];
+---
+
+<Base
+  title="About — YourName"
+  description="一名关注 AI、推荐系统与产品工程的程序员。"
+>
+  <div class="max-w-2xl mx-auto px-6 pt-16 pb-24">
+
+    <!-- Avatar + Name -->
+    <div class="fade-up flex items-center gap-5 mb-12">
+      <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center flex-shrink-0">
+        <User class="w-7 h-7 text-[var(--color-accent)]" />
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold text-[var(--color-text)] tracking-tight">YourName</h1>
+        <p class="text-sm text-[var(--color-muted)] mt-1">Software Engineer · AI Explorer · Builder</p>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="fade-up mb-12" style="transition-delay:80ms">
+      <p class="text-[var(--color-text)] leading-[1.8] text-[17px]">
+        你好，我是 XXX。<br />
+        一名关注 AI、推荐系统与产品工程的程序员。<br />
+        我在这里记录 AI 工具实践、技术分析、产品思考和个人构建过程。
+      </p>
+    </div>
+
+    <div class="h-px bg-[var(--color-border)] mb-12"></div>
+
+    <!-- Focus -->
+    <div class="fade-up mb-12" style="transition-delay:160ms">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-5">Focus</h2>
+      <ul class="space-y-3">
+        {focuses.map(item => (
+          <li class="flex items-center gap-3 text-[var(--color-text)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] flex-shrink-0" aria-hidden="true"></span>
+            <span class="text-[17px]">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="h-px bg-[var(--color-border)] mb-12"></div>
+
+    <!-- Contact -->
+    <div class="fade-up" style="transition-delay:240ms">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-4">Contact</h2>
+      <p class="text-sm text-[var(--color-muted)] mb-6 leading-relaxed">
+        如果你也关注 AI 产品、推荐系统或个人工具构建，欢迎交流。
+      </p>
+      <div class="flex flex-wrap gap-3">
+        {contacts.map(({ label, href }) => (
+          <a
+            href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="inline-flex items-center justify-center px-4 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-text)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all duration-200 cursor-pointer min-h-[44px]"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</Base>
