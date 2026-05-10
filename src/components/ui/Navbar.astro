@@ -1,0 +1,30 @@
+---
+const { pathname } = Astro.url;
+const links = [
+  { href: '/notes', label: 'AI Notes' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-[var(--color-bg)]/80 border-b border-[var(--color-border)]/40">
+  <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="/" class="font-semibold text-[var(--color-text)] text-sm tracking-tight hover:opacity-70 transition-opacity">
+      YourName
+    </a>
+    <div class="flex items-center gap-6">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'text-sm transition-colors',
+            pathname.startsWith(href)
+              ? 'text-[var(--color-accent)] font-medium'
+              : 'text-[var(--color-muted)] hover:text-[var(--color-text)]',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>

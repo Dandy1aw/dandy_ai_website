@@ -1,0 +1,26 @@
+---
+const links = [
+  { href: 'mailto:your@email.com', label: 'Email' },
+  { href: 'https://github.com/yourusername', label: 'GitHub' },
+  { href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
+  { href: 'https://x.com/yourusername', label: 'X' },
+];
+---
+
+<footer class="border-t border-[var(--color-border)] mt-24">
+  <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <span class="text-sm text-[var(--color-muted)]">© 2026 YourName</span>
+    <div class="flex items-center gap-5">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          target={href.startsWith('http') ? '_blank' : undefined}
+          rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          class="text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] transition-colors"
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>
