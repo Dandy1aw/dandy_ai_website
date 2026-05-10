@@ -3,3 +3,5 @@ dist/
 node_modules/
 .superpowers/
 .claude/
+dandy_ai_website/
+design-system/

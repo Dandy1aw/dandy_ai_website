@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    ".claude": true
+  },
+  "search.exclude": {
+    ".claude": true
+  },
+  "files.watcherExclude": {
+    "**/.claude/**": true
+  }
+}
