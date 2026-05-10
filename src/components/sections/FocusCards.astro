@@ -1,0 +1,43 @@
+---
+import { Brain, ChartBar, Wrench } from '@lucide/astro';
+
+const focuses = [
+  {
+    Icon: Brain,
+    title: 'AI Tools',
+    description: '记录 ChatGPT、Cursor、Agent 等 AI 工具的实践方式与工作流优化。',
+  },
+  {
+    Icon: ChartBar,
+    title: 'Recommendation',
+    description: '分析推荐公式、内容分发、CTR 与完播率混排策略。',
+  },
+  {
+    Icon: Wrench,
+    title: 'Product Engineering',
+    description: '分享从想法、设计到工程实现的完整构建过程。',
+  },
+];
+---
+
+<section class="bg-[var(--color-bg)] py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="fade-up text-2xl sm:text-3xl font-bold text-[var(--color-text)] text-center mb-12 tracking-tight">
+      我关注的方向
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      {focuses.map(({ Icon, title, description }, i) => (
+        <div
+          class="fade-up p-6 rounded-2xl bg-[var(--color-card)] border border-[var(--color-border)] hover:shadow-md transition-all duration-200"
+          style={`transition-delay:${i * 80}ms`}
+        >
+          <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
+            <Icon class="w-5 h-5 text-[var(--color-accent)]" />
+          </div>
+          <h3 class="font-semibold text-[var(--color-text)] mb-2">{title}</h3>
+          <p class="text-sm text-[var(--color-muted)] leading-relaxed">{description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

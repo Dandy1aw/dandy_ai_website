@@ -1,0 +1,16 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 py-24">
+  <h1 class="fade-up text-5xl sm:text-6xl lg:text-7xl font-bold text-[var(--color-text)] leading-[1.1] tracking-tight">
+    程序员。<br />AI 实践者。<br />产品构建者。
+  </h1>
+  <p class="fade-up mt-6 max-w-lg text-lg text-[var(--color-muted)] leading-relaxed" style="transition-delay:120ms">
+    分享 AI 工具实践、推荐系统分析、产品工程经验，以及一些自己构建的小项目。
+  </p>
+  <div class="fade-up flex flex-wrap gap-3 mt-8 justify-center" style="transition-delay:240ms">
+    <Button href="/notes">读 AI Notes</Button>
+    <Button href="/about" variant="outline">关于我</Button>
+  </div>
+</section>
