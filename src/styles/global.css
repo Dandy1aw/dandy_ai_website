@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F5F5F7;
+  --color-bg-dark: #000000;
+  --color-text: #1D1D1F;
+  --color-muted: #6E6E73;
+  --color-card: #FFFFFF;
+  --color-accent: #0071E3;
+  --color-border: #D2D2D7;
+
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll reveal — only active when JS loaded */
+.js-loaded .fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-loaded .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-loaded .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
