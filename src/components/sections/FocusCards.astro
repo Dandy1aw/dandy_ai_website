@@ -20,7 +20,7 @@ const focuses = [
 ];
 ---
 
-<section class="bg-[var(--color-bg)] py-20 px-6">
+<section class="py-20 px-6">
   <div class="max-w-5xl mx-auto">
     <h2 class="fade-up text-2xl sm:text-3xl font-bold text-[var(--color-text)] text-center mb-12 tracking-tight">
       我关注的方向
@@ -28,10 +28,10 @@ const focuses = [
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
       {focuses.map(({ Icon, title, description }, i) => (
         <div
-          class="fade-up p-6 rounded-2xl bg-[var(--color-card)] border border-[var(--color-border)] hover:shadow-md transition-all duration-200"
+          class="fade-up p-6 rounded-2xl card-glass transition-all duration-200"
           style={`transition-delay:${i * 80}ms`}
         >
-          <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
             <Icon class="w-5 h-5 text-[var(--color-accent)]" />
           </div>
           <h3 class="font-semibold text-[var(--color-text)] mb-2">{title}</h3>

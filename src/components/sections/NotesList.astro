@@ -23,7 +23,7 @@ const tags = ['AI Tools', 'Recommendation', 'Product Engineering', 'Thinking'] a
     {tags.map(tag => (
       <button
         data-tag={tag}
-        class="tag-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer min-h-[44px] bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-text)]"
+        class="tag-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer min-h-[44px] bg-transparent border border-purple-500/20 text-[var(--color-muted)] hover:text-[var(--color-text)] hover:border-purple-500/50"
       >
         {tag}
       </button>
@@ -66,9 +66,9 @@ const tags = ['AI Tools', 'Recommendation', 'Product Engineering', 'Thinking'] a
       const isActive = btn.dataset.tag === tag;
       btn.classList.toggle('bg-[var(--color-accent)]', isActive);
       btn.classList.toggle('text-white', isActive);
-      btn.classList.toggle('bg-[var(--color-bg)]', !isActive);
+      btn.classList.toggle('bg-transparent', !isActive);
       btn.classList.toggle('border', !isActive);
-      btn.classList.toggle('border-[var(--color-border)]', !isActive);
+      btn.classList.toggle('border-purple-500/20', !isActive);
       btn.classList.toggle('text-[var(--color-muted)]', !isActive);
     });
 

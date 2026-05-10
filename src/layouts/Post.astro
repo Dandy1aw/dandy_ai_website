@@ -52,16 +52,16 @@ const { note, related } = Astro.props;
       prose-p:text-[var(--color-text)] prose-p:leading-[1.8]
       prose-a:text-[var(--color-accent)] prose-a:no-underline hover:prose-a:underline
       prose-strong:text-[var(--color-text)] prose-strong:font-semibold
-      prose-code:font-mono prose-code:text-sm prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-      prose-pre:bg-gray-50 prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--color-border)] prose-pre:text-sm
+      prose-code:font-mono prose-code:text-sm prose-code:bg-purple-500/10 prose-code:text-purple-300 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+      prose-pre:bg-[#0D0D1A] prose-pre:rounded-xl prose-pre:border prose-pre:border-purple-500/20 prose-pre:text-sm
       prose-ul:text-[var(--color-text)] prose-ol:text-[var(--color-text)]
-      prose-blockquote:text-[var(--color-muted)] prose-blockquote:border-l-[var(--color-accent)]">
+      prose-blockquote:text-[var(--color-muted)] prose-blockquote:border-l-[var(--color-accent)] prose-invert">
       <slot />
     </div>
 
     <!-- Related article -->
     {related && (
-      <aside class="mt-16 pt-8 border-t border-[var(--color-border)]">
+      <aside class="mt-16 pt-8 border-t border-purple-500/20">
         <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-4">继续阅读</p>
         <NoteCard note={related} />
       </aside>
