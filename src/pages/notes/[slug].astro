@@ -1,0 +1,23 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Post from '../../layouts/Post.astro';
+import { getNoteBySlug, getRelatedNote } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('notes', ({ data }) => !data.draft);
+  return entries.map(entry => ({ params: { slug: entry.id } }));
+}
+
+const { slug } = Astro.params;
+const note = await getNoteBySlug(slug);
+
+if (!note) return Astro.redirect('/notes');
+
+const entry = await getEntry('notes', slug);
+const { Content } = await render(entry!);
+const related = await getRelatedNote(note);
+---
+
+<Post note={note} related={related}>
+  <Content />
+</Post>
