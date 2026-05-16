@@ -1,0 +1,55 @@
+---
+// To activate iframe mode: set videoUrl to a YouTube/Bilibili embed URL
+// YouTube:  https://www.youtube.com/embed/VIDEO_ID
+// Bilibili: https://player.bilibili.com/player.html?bvid=BV_ID&autoplay=0
+// To use local video: set localVideo to the path under /public (e.g. '/videos/llm_ytp.mp4')
+const videoUrl = '';
+const localVideo = '/videos/llm_ytp.mp4';
+const title = '用 AI 构建的过程';
+const description = '记录我如何用 AI 工具解决真实问题，持续更新。';
+---
+
+<section class="py-20 px-6">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="fade-up mb-8 text-center">
+      <h2 class="text-2xl font-bold text-[var(--color-text)] tracking-tight">{title}</h2>
+      <p class="mt-2 text-sm text-[var(--color-muted)]">{description}</p>
+    </div>
+
+    <div class="fade-up relative w-full rounded-2xl overflow-hidden card-glass" style="aspect-ratio:16/9">
+      {videoUrl ? (
+        <iframe
+          src={videoUrl}
+          class="absolute inset-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+          title={title}
+        />
+      ) : localVideo ? (
+        <video
+          src={localVideo}
+          class="absolute inset-0 w-full h-full object-contain"
+          controls
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          title={title}
+        />
+      ) : (
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-purple-500/15 border border-purple-500/30 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="text-[var(--color-accent)] ml-1">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="text-sm text-[var(--color-muted)]">视频即将上线</span>
+        </div>
+      )}
+    </div>
+
+  </div>
+</section>

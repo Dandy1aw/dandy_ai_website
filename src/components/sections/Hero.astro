@@ -2,21 +2,44 @@
 import Button from '../ui/Button.astro';
 ---
 
-<section class="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-6 py-24 overflow-hidden">
+<section class="relative min-h-[80vh] flex flex-col items-center justify-center px-6 py-24 overflow-hidden">
   <!-- Purple glow background -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-purple-600/20 blur-[140px]"></div>
     <div class="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-violet-800/15 blur-[100px]"></div>
   </div>
 
-  <h1 class="fade-up relative text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-    <span class="bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent">Build with AI</span>
-  </h1>
-  <p class="fade-up relative mt-6 max-w-lg text-lg text-[var(--color-muted)] leading-relaxed" style="transition-delay:120ms">
-    分享 AI 工具实践、推荐系统分析、产品工程经验，以及一些自己构建的小项目。
-  </p>
-  <div class="fade-up relative flex flex-wrap gap-3 mt-8 justify-center" style="transition-delay:240ms">
-    <Button href="/notes">读 AI Notes</Button>
-    <Button href="/about" variant="outline">关于我</Button>
+  <div class="relative w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+    <!-- Left: text -->
+    <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+      <h1 class="fade-up text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+        <span class="bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent">Build with AI</span>
+      </h1>
+      <p class="fade-up mt-6 text-lg text-[var(--color-muted)] leading-relaxed" style="transition-delay:120ms">
+        AI 实践 · 产品思考 · 独立构建
+      </p>
+      <div class="fade-up flex flex-wrap gap-3 mt-8 justify-center lg:justify-start" style="transition-delay:240ms">
+        <Button href="/notes">AI Notes</Button>
+        <Button href="/about" variant="outline">关于我</Button>
+      </div>
+    </div>
+
+    <!-- Right: video -->
+    <div class="fade-up w-full lg:flex-1 max-w-xl lg:max-w-none" style="transition-delay:180ms">
+      <div class="relative w-full rounded-2xl overflow-hidden card-glass shadow-[0_0_40px_rgba(168,85,247,0.12)]" style="aspect-ratio:16/9">
+        <video
+          src="/videos/llm_ytp.mp4"
+          class="absolute inset-0 w-full h-full object-contain"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="auto"
+        />
+      </div>
+    </div>
+
   </div>
 </section>
