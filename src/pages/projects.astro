@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+
+const projects = [
+  {
+    name: '工艺品公众号发布系统',
+    subtitle: 'AI 辅助写作 · 一键推送微信草稿箱',
+    description: '供个人创作者用的 Web 工具，输入提示词 + 上传图片，AI 生成工艺品主题文章，支持多公众号管理、TipTap 富文本编辑，一键提交微信草稿箱。',
+    stack: ['Vue3', 'FastAPI', 'SQLite', 'TipTap', 'DeepSeek', 'wechatpy', 'AES-256'],
+    status: 'building',
+    url: null,
+  },
+  {
+    name: '爷爷的厨房',
+    subtitle: '家庭点单小程序',
+    description: '一个面向家庭场景的微信小程序，让家人点菜、爷爷看单，并通过本地提醒和分享功能协调整个家庭厨房。',
+    stack: ['微信小程序', 'JavaScript', 'WXML', 'WXSS', 'Node.js'],
+    status: 'building',
+    url: null,
+  },
+];
+
+const statusMap = {
+  building: { label: 'Building', color: 'text-amber-400 bg-amber-400/10 border-amber-400/20' },
+  done:     { label: 'Done',     color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
+  idea:     { label: 'Idea',     color: 'text-sky-400 bg-sky-400/10 border-sky-400/20' },
+};
+---
+
+<Base
+  title="Projects — Dandylaw"
+  description="用 AI 和代码构建的项目。"
+>
+  <div class="max-w-2xl mx-auto px-6 pt-16 pb-24">
+
+    <div class="fade-up mb-12">
+      <h1 class="text-3xl font-bold text-[var(--color-text)] tracking-tight">Projects</h1>
+      <p class="mt-3 text-[var(--color-muted)] leading-relaxed">用代码构建的小东西。</p>
+    </div>
+
+    <div class="space-y-5">
+      {projects.map((project, i) => {
+        const status = statusMap[project.status];
+        return (
+          <div
+            class="fade-up p-6 rounded-2xl card-glass"
+            style={`transition-delay:${i * 80}ms`}
+          >
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <div>
+                <h2 class="text-lg font-semibold text-[var(--color-text)] leading-tight">{project.name}</h2>
+                <p class="text-sm text-[var(--color-muted)] mt-0.5">{project.subtitle}</p>
+              </div>
+              <span class={`flex-shrink-0 text-xs font-medium px-2.5 py-1 rounded-full border ${status.color}`}>
+                {status.label}
+              </span>
+            </div>
+
+            <p class="text-sm text-[var(--color-muted)] leading-relaxed mb-4">
+              {project.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              {project.stack.map(tech => (
+                <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {project.url && (
+              <div class="mt-4 pt-4 border-t border-purple-500/10">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-sm text-[var(--color-accent)] hover:underline"
+                >
+                  查看项目
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</Base>

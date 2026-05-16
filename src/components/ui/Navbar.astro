@@ -2,6 +2,7 @@
 const { pathname } = Astro.url;
 const links = [
   { href: '/notes', label: 'AI Notes' },
+  { href: '/projects', label: 'Projects' },
   { href: '/about', label: 'About' },
 ];
 ---
@@ -9,7 +10,7 @@ const links = [
 <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-black/60 border-b border-purple-500/10">
   <nav class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
     <a href="/" class="font-semibold text-[var(--color-text)] text-sm tracking-tight hover:opacity-70 transition-opacity">
-      YourName
+      Dandylaw
     </a>
     <div class="flex items-center gap-6">
       {links.map(({ href, label }) => (
