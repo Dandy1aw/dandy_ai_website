@@ -1,14 +1,30 @@
 ---
 ---
 
-<section class="relative py-28 px-6 overflow-hidden" style="background: linear-gradient(135deg, #0D0518 0%, #1A0533 50%, #0D0518 100%);">
+<section class="relative py-28 px-6 overflow-hidden">
+  <!-- 仅在文字周围保留一个柔和的光晕，不渲染整块背景 -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-purple-700/25 blur-[120px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[180px] rounded-full bg-purple-600/10 blur-[90px]"></div>
   </div>
+
   <div class="relative max-w-3xl mx-auto text-center">
-    <p class="fade-up text-2xl sm:text-3xl font-semibold leading-relaxed bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+    <!-- 上方装饰线 -->
+    <div class="flex items-center justify-center gap-3 mb-10" aria-hidden="true">
+      <div class="h-px w-12 bg-gradient-to-r from-transparent to-purple-400/40"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-purple-400/50"></div>
+      <div class="h-px w-12 bg-gradient-to-l from-transparent to-purple-400/40"></div>
+    </div>
+
+    <p class="fade-up text-2xl sm:text-3xl font-semibold leading-relaxed tracking-wide bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
       我相信 AI 不只是工具，<br class="hidden sm:block" />
       它正在成为新的思考方式、构建方式和创造界面。
     </p>
+
+    <!-- 下方装饰线 -->
+    <div class="flex items-center justify-center gap-3 mt-10" aria-hidden="true">
+      <div class="h-px w-12 bg-gradient-to-r from-transparent to-purple-400/40"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-purple-400/50"></div>
+      <div class="h-px w-12 bg-gradient-to-l from-transparent to-purple-400/40"></div>
+    </div>
   </div>
 </section>

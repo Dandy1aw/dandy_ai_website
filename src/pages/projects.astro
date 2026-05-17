@@ -1,30 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-
-const projects = [
-  {
-    name: '工艺品公众号发布系统',
-    subtitle: 'AI 辅助写作 · 一键推送微信草稿箱',
-    description: '供个人创作者用的 Web 工具，输入提示词 + 上传图片，AI 生成工艺品主题文章，支持多公众号管理、TipTap 富文本编辑，一键提交微信草稿箱。',
-    stack: ['Vue3', 'FastAPI', 'SQLite', 'TipTap', 'DeepSeek', 'wechatpy', 'AES-256'],
-    status: 'building',
-    url: null,
-  },
-  {
-    name: '爷爷的厨房',
-    subtitle: '家庭点单小程序',
-    description: '一个面向家庭场景的微信小程序，让家人点菜、爷爷看单，并通过本地提醒和分享功能协调整个家庭厨房。',
-    stack: ['微信小程序', 'JavaScript', 'WXML', 'WXSS', 'Node.js'],
-    status: 'building',
-    url: null,
-  },
-];
-
-const statusMap = {
-  building: { label: 'Building', color: 'text-amber-400 bg-amber-400/10 border-amber-400/20' },
-  done:     { label: 'Done',     color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
-  idea:     { label: 'Idea',     color: 'text-sky-400 bg-sky-400/10 border-sky-400/20' },
-};
+import { projects, statusMap } from '../data/projects';
 ---
 
 <Base
