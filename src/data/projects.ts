@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description: '个人投资监控网页：每日自动拉取美股指数、ETF、龙头股行情，计算均线指标，聚合新闻并用 AI 生成摘要，输出关注等级和定投建议。',
     stack: ['Next.js', 'Supabase', 'Tailwind CSS', 'ECharts', 'OpenAI API', 'GitHub Actions', 'Vercel'],
     status: 'building',
-    url: null,
+    url: 'https://market-radar-rjioguxfd-dandylaw-s-projects.vercel.app',
   },
   {
     name: '工艺品公众号发布系统',
