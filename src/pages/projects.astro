@@ -17,9 +17,13 @@ import { projects, statusMap } from '../data/projects';
     <div class="space-y-5">
       {projects.map((project, i) => {
         const status = statusMap[project.status];
+        const Tag = project.url ? 'a' : 'div';
         return (
-          <div
-            class="fade-up p-6 rounded-2xl card-glass"
+          <Tag
+            href={project.url ?? undefined}
+            target={project.url ? '_blank' : undefined}
+            rel={project.url ? 'noopener noreferrer' : undefined}
+            class={`fade-up block p-6 rounded-2xl card-glass transition-all duration-200 ${project.url ? 'cursor-pointer hover:border-purple-500/40' : ''}`}
             style={`transition-delay:${i * 80}ms`}
           >
             <div class="flex items-start justify-between gap-4 mb-3">
@@ -43,21 +47,7 @@ import { projects, statusMap } from '../data/projects';
                 </span>
               ))}
             </div>
-
-            {project.url && (
-              <div class="mt-4 pt-4 border-t border-purple-500/10">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 text-sm text-[var(--color-accent)] hover:underline"
-                >
-                  查看项目
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            )}
-          </div>
+          </Tag>
         );
       })}
     </div>

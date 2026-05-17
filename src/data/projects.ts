@@ -15,7 +15,7 @@ export const projects: Project[] = [
     subtitle: '美股 ETF 智能监控台',
     description: '个人投资监控网页：每日自动拉取美股指数、ETF、龙头股行情，计算均线指标，聚合新闻并用 AI 生成摘要，输出关注等级和定投建议。',
     stack: ['Next.js', 'Supabase', 'Tailwind CSS', 'ECharts', 'OpenAI API', 'GitHub Actions', 'Vercel'],
-    status: 'building',
+    status: 'done',
     url: 'https://market-radar-rjioguxfd-dandylaw-s-projects.vercel.app',
   },
   {
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     subtitle: 'AI 辅助写作 · 一键推送微信草稿箱',
     description: '供个人创作者用的 Web 工具，输入提示词 + 上传图片，AI 生成工艺品主题文章，支持多公众号管理、TipTap 富文本编辑，一键提交微信草稿箱。',
     stack: ['Vue3', 'FastAPI', 'SQLite', 'TipTap', 'DeepSeek', 'wechatpy', 'AES-256'],
-    status: 'building',
+    status: 'done',
     url: null,
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     subtitle: '家庭点单小程序',
     description: '一个面向家庭场景的微信小程序，让家人点菜、爷爷看单，并通过本地提醒和分享功能协调整个家庭厨房。',
     stack: ['微信小程序', 'JavaScript', 'WXML', 'WXSS', 'Node.js'],
-    status: 'building',
+    status: 'done',
     url: null,
   },
 ];
